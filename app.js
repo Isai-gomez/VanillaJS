@@ -75,6 +75,7 @@ function filterTodo(e) {
         } else {
           todo.style.display = "none";
         }
+        break;
     }
   });
 }
