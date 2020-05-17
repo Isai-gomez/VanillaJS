@@ -16,27 +16,41 @@
       <header>
         <h1>Buscador</h1>
       </header>
-      <form>
+      <form class="formulario">
         <div class="form-group">
-          <input type="text" class="form-control" id="dataUI" />
+          <input type="text" class="form-control" id="textoUI" />
         </div>
 
-        <button type="submit" class="btn btn-primary" id="buscar">
+        <button type="submit" class="btn btn-primary" id="botonUI">
           Buscar
         </button>
       </form>
 
-      <ul class="list-group mt-3">
-        <li class="list-group-item">Cras justo odio</li>
+      <ul class="list-group mt-3" id="result">
+        <!-- <li class="list-group-item">Cras justo odio</li>
         <li class="list-group-item">Dapibus ac facilisis in</li>
         <li class="list-group-item">Morbi leo risus</li>
         <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li class="list-group-item">Vestibulum at eros</li> -->
       </ul>
     </div>
     <script type="module">
-      import { buscador } from "./app.js";
-      buscador();
+      import { frutas } from "./data/data.js";
+
+      //Varibles globales
+      // const formularioUI = documnet.querySelector(".formulario");
+      const textUI = document.querySelector("#textoUI");
+      const botonUI = document.querySelector("#botonUI");
+      const resultUI = document.querySelector("#botonUI");
+
+      //Eventos
+      botonUI.addEventListener("click", buscar);
+
+      //Funciones
+      function buscar(event) {
+        event.preventDefault();
+        console.log(textUI.value);
+      }
     </script>
   </body>
 </html>
