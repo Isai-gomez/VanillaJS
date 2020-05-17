@@ -129,13 +129,13 @@ function getTodos() {
 function removeLocalTodos(todo) {
   //CHECH---HEY Do   I already heve thing in there?
   let todos;
-  if (localStorage.getItem("todos") === null) {
+  if (!localStorage.getItem("todos") === null) {
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
   const todoIndex = todo.children[0].innerText;
-
+  console.log(todos.indexOf(todoIndex));
   todos.splice(todos.indexOf(todoIndex), 1);
   localStorage.setItem("todos", JSON.stringify(todos));
 }
