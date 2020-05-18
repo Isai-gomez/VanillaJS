@@ -36,6 +36,9 @@
       const textoUI = document.querySelector("#textoUI");
       const botonUI = document.querySelector("#botonUI");
       const resultUI = document.querySelector("#resultUI");
+      //Eventos
+      botonUI.addEventListener("click", buscar);
+      textoUI.addEventListener("keyup", buscar);
 
       //Funciones
       function buscar(event) {
@@ -46,15 +49,13 @@
         for (let fruta of frutas) {
           let nombre = fruta.nombre.toLowerCase();
           if (nombre.indexOf(texto) !== -1) {
-            resultUI.innerHTML += `<li class="list-group-item mt-2">${nombre}</li>`;
+            resultUI.innerHTML += `<li class="list-group-item mt-2">${nombre} precio:${fruta.precio}</li>`;
           }
         }
         if (resultUI === "") {
           resultUI.innerHTML += `<li class="list-group-item mt-2">Producto no encontrado</li>`;
         }
       }
-      //Eventos
-      botonUI.addEventListener("click", buscar);
     </script>
   </body>
 </html>
