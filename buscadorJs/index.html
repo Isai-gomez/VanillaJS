@@ -26,31 +26,35 @@
         </button>
       </form>
 
-      <ul class="list-group mt-3" id="result">
-        <!-- <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li> -->
-      </ul>
+      <ul class="list-group mt-3" id="resultUI"></ul>
     </div>
     <script type="module">
       import { frutas } from "./data/data.js";
 
       //Varibles globales
       // const formularioUI = documnet.querySelector(".formulario");
-      const textUI = document.querySelector("#textoUI");
+      const textoUI = document.querySelector("#textoUI");
       const botonUI = document.querySelector("#botonUI");
-      const resultUI = document.querySelector("#botonUI");
-
-      //Eventos
-      botonUI.addEventListener("click", buscar);
+      const resultUI = document.querySelector("#resultUI");
 
       //Funciones
       function buscar(event) {
         event.preventDefault();
-        console.log(textUI.value);
+        resultUI.innerHTML = "";
+        const texto = textoUI.value.toLowerCase();
+
+        for (let fruta of frutas) {
+          let nombre = fruta.nombre.toLowerCase();
+          if (nombre.indexOf(texto) !== -1) {
+            resultUI.innerHTML += `<li class="list-group-item mt-2">${nombre}</li>`;
+          }
+        }
+        if (resultUI === "") {
+          resultUI.innerHTML += `<li class="list-group-item mt-2">Producto no encontrado</li>`;
+        }
       }
+      //Eventos
+      botonUI.addEventListener("click", buscar);
     </script>
   </body>
 </html>
