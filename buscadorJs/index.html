@@ -50,9 +50,9 @@
             resultUI.innerHTML += `<li class="list-group-item mt-2">${nombre} $${fruta.precio}</li>`;
           }
         }
-        // if (resultUI.innerHTML === "") {
-        //   resultUI.innerHTML += `<li class="list-group-item mt-2">Producto no encontrado</li>`;
-        // }
+        if (resultUI.innerHTML === "") {
+          resultUI.innerHTML += `<li class="list-group-item mt-2">Producto no encontrado</li>`;
+        }
       }
     </script>
   </body>
