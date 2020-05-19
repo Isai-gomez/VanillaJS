@@ -14,7 +14,7 @@
   <body>
     <div class="container m-3">
       <header>
-        <h1>Buscador</h1>
+        <h1 class="text">Buscador</h1>
       </header>
       <form class="formulario">
         <div class="form-group">
@@ -31,9 +31,7 @@
     <script type="module">
       import { frutas } from "./data/data.js";
 
-      //Varibles globales
-      // const formularioUI = documnet.querySelector(".formulario");
-      const textoUI = document.querySelector("#textoUI");
+      //Varibles globales      const textoUI = document.querySelector("#textoUI");
       const botonUI = document.querySelector("#botonUI");
       const resultUI = document.querySelector("#resultUI");
       //Eventos
@@ -49,12 +47,12 @@
         for (let fruta of frutas) {
           let nombre = fruta.nombre.toLowerCase();
           if (nombre.indexOf(texto) !== -1) {
-            resultUI.innerHTML += `<li class="list-group-item mt-2">${nombre} precio:${fruta.precio}</li>`;
+            resultUI.innerHTML += `<li class="list-group-item mt-2">${nombre} $${fruta.precio}</li>`;
           }
         }
-        if (resultUI === "") {
-          resultUI.innerHTML += `<li class="list-group-item mt-2">Producto no encontrado</li>`;
-        }
+        // if (resultUI.innerHTML === "") {
+        //   resultUI.innerHTML += `<li class="list-group-item mt-2">Producto no encontrado</li>`;
+        // }
       }
     </script>
   </body>
