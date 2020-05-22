@@ -47,11 +47,11 @@
         for (let fruta of frutas) {
           let nombre = fruta.nombre.toLowerCase();
           if (nombre.indexOf(texto) !== -1) {
-            resultUI.innerHTML += `<li class="list-group-item mt-2">${nombre} $${fruta.precio}</li>`;
+            resultUI.innerHTML += `<li class="list-group-item mt-2">${nombre} $$ {fruta.precio}</li>`;
           }
         }
         if (resultUI.innerHTML === "") {
-          resultUI.innerHTML += `<li class="list-group-item mt-2">Producto no encontrado</li>`;
+          resultUI.innerHTML += `<li class="list-group-item mt-2">Producto no encontrado (;</li>`;
         }
       }
     </script>
